@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content=""IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="js/functions.js" defer></script>
+        <title>JS - DOM</title>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="img/Sailor-Moon-Logo.png" alt="Sailor Moon Logo" >
+            <nav class="nav_menu">
+                <a  href="#historia">Historia</a>
+                <a  href="#personajes">Tienda</a>
+                <a  href="#analisis">Análisis_final</a>
+            </nav>
+        
+            <article class="shop_user">
+                <div class="cart-icon-container">
+                    <i><img src="img/shopping-cart.svg" id="cart-toggle" alt="Carrito"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </article>
+           
+        </header>
+
+        <aside class="cart" id="cart">
+            <button id="cart-close" class="cart-close">✖</button>
+            <h4> Carrito de Compras</h4>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: $0.00</p>
+            <button id="clear-cart">Vaciar carrito</button>
+        </aside>
+    
+        <main>
+        <section class="historia" id="historia" >
+            <article class="historia_1">
+                   <h1>Sailor Moon</h1>
+                       <p class="section_text"> <span>Pretty Soldier Sailor Moon</span> (美少女戦士セーラームーン Bishōjo Senshi Sērā Mūn ?), conocida como
+                       Sailor Moon, es una serie de manga escrita e ilustrada por Naoko Takeuchi en diciembre de 1991. 
+                       El manga se hizo particularmente famoso por volver a popularizar con gran éxito el subgénero de 
+                       las chicas mágicas,​ y sus elementos sentai​ consiguieron que la aceptación también fuese masiva 
+                       entre el sector masculino, generalmente menos interesado en este tipo de historias.​ Fue publicada
+                       en la revista japonesa Nakayoshi ("Amigas íntimas") de la editorial Kodansha entre 1992 y 1997 y 
+                       recopilada en 18 tankōbon (volúmenes).</p>
+            </article>
+            
+            <article class="historia_2">
+                <h2>Aspectos de la serie</h2>
+                        <p class="section_text">El mundo ficticio en el que se desarrolla la trama de Sailor Moon está centrado en el 
+                        concepto de "Sailor Senshi",​ una especie de justicieras con uniforme de "sailor fuku" 
+                        (traje de marinero) que constituyen el arquetipo de heroína más característico de la serie.
+                        Más allá de su nombre y estilo de vestimenta, sin embargo, las Sailor Senshi no presentan 
+                        ningún otro rasgo en común con ese epíteto;​ ya que se muestra que todas ellas luchan contra 
+                        el mal más bien por medio del "poder de su planeta guardián"​ (también llamado su "poder estelar"):
+                        una facultad mágica y personal, procedente de un exclusivo vínculo místico (que sólo cada una de 
+                        ellas posee)​ respecto a un planeta o astro en específico.</p>
+            </article>
+                        
+            <article class="historia_3">
+                <h3>Historia</h3>
+                        <p class="section_text">[Usagi] y sus amigas viven vidas escolares normales, pero fuera de clase se transforman 
+                        en las hermosas, poderosas heroínas de traje llamadas [Sailor Senshi]. Reencarnadas de la 
+                        realeza del [Milenio de Plata], [sus] nombres y poderes están basados en los planetas del 
+                        Sistema Solar. Es su deber proteger la Tierra.</p>
+            </article>
+            
+        </section>
+
+        <section class="Tienda">
+
+            <section id="personajes" class="banner">
+                <h4>Tienda</h4>
+                <p class="banner_text">Personajes anime Sailor Moon</p>
+            </section>
+
+            <section class="gallery"> 
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_moon.jpg" alt="Sailor Moon" />
+                <h5>Sailor Moon</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Moon" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_mercury.jpg" alt="Sailor Mercury" />
+                <h5>Sailor Mercury</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Mercury" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_mars.jpg" alt="Sailor Mars" />
+                <h5>Sailor Mars</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Mars" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_jupiter.jpg" alt="Sailor Jupiter" />
+                <h5>Sailor Jupiter</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Jupiter" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_venus.jpg" alt="Sailor Venus" />
+                <h5>Sailor Venus</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Venus" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_neptune.jpg" alt="Sailor Neptune" />
+                <h5>Sailor Neptune</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Neptune" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_urano.jpg" alt="Sailor Urano" />
+                <h5>Sailor Urano</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Urano" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_pluto.jpg" alt="Sailor Pluto" />
+                <h5>Sailor Pluto</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Pluto" data-price="350">Agregar al carrito</button>
+            </article>
+
+            <article class="gallery_item"> 
+                <img class="gallery_image" src="img/juguete_sailor_saturn.jpg" alt="Sailor Saturn" />
+                <h5>Sailor Saturn</h5>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Sailor Saturn" data-price="350">Agregar al carrito</button>
+            </article>
+        
+        </section>
+
+        
+
+    </main>
+
+    <footer id="analisis" class="footer">
+        <h6 class="footer_title">Análisis final</h6>
+        <article class="footer_article">
+            <p class="footer_text">En Occidente, a veces se asoció a Sailor Moon con los movimientos feministas o de Girl Power y con un 
+                discurso que animaba a los espectadores a «creer en ellos mismos», especialmente a través de las 
+                caracterizaciones «creíbles, carismáticas e independientes» de sus protagonistas, las Sailor Senshi; 
+                lo cual en Francia fue interpretado en su totalidad como una «forma inequívoca de postura feminista».
+                A pesar de que es vista como una historia que anima a las niñas a "confiar en sí mismas", o 
+                como una serie con grandes tendencias feministas evidentes por la naturaleza agresiva y fuertes 
+                personalidades de sus mujeres protagonistas, hay que señalar que se trata de un tipo específico 
+                de concepto feminista, en el cual «los ideales femeninos tradicionales [son] incorporados a personajes
+                que actúan en modos tradicionalmente asociados a lo masculino».Si bien las Sailor Senshi son 
+                luchadoras fuertes e independientes que combaten el mal (el cual es, generalmente, un estereotipo de 
+                personaje masculino), también están perfectamente feminizadas a partir del uniforme y los accesorios 
+                que componen su disfraz de guerreras mágicas; disfraz que «enfatiza fuertemente la presencia de joyas,
+                maquillaje, así como trajes altamente erotizantes (amplio escote, falda corta, y cintura acentuada)».
+                </p>
+        </article>
+    </footer>
+</body>
+</html>
