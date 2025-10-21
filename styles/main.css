@@ -1,0 +1,325 @@
+@charset "UTF-8";
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  word-spacing: 10px;
+}
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #612c6d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 5px double #666666;
+}
+
+header img {
+  width: 300px;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 20px;
+}
+
+@media screen and (max-width: 70rem) {
+  header nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header > a {
+  display: block;
+  color: #fff;
+}
+
+header .shop_user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+
+header .shop_user i {
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+header .shop_user i:hover {
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+}
+
+header .shop_user i:first-child {
+  width: 24px;
+}
+
+header .shop_user i:last-child {
+  width: 23px;
+}
+
+header .shop_user i img {
+  width: 60px;
+}
+
+header .cart-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+header #cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #e91e63;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* ===== MAIN ===== */
+/* ===== IMAGENES ===== */
+.Personajes {
+  background-color: #9e5e97;
+  border: 5px double #666666;
+}
+
+.banner {
+  width: 100%;
+  padding: 90px 0;
+  text-align: center;
+  background-image: url("../img/fondo_sailormoon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #290231;
+  background-position-y: 40%;
+}
+
+h4 {
+  color: #2c0d3b;
+  background-color: none;
+  text-align: center;
+  letter-spacing: 5px;
+  text-decoration: underline;
+  word-spacing: 15px;
+  text-shadow: 2px 2px 5px #000;
+  font-size: 10px;
+}
+
+.banner_text {
+  color: #130d0d;
+  font-size: 30px;
+}
+
+.gallery {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.gallery_item {
+  text-align: center;
+}
+
+.gallery_image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+button.add-to-cart {
+  margin-top: 10px;
+  background-color: #f06292;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.add-to-cart:hover {
+  background-color: #ec407a;
+}
+
+/* ======== CARRITO DESLIZANTE ======== */
+.cart {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  /* Oculto inicialmente */
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  border-right: 3px solid #f8bbd0;
+  -webkit-box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  overflow-y: auto;
+  -webkit-transition: left 0.3s ease;
+  transition: left 0.3s ease;
+  /* Animación */
+  z-index: 1000;
+}
+
+/* Cuando está activo → visible */
+.cart.active {
+  left: 0;
+}
+
+.cart h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.cart ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #f48fb1;
+  padding: 6px 0;
+}
+
+.cart button {
+  display: block;
+  margin: 15px auto 0;
+  background-color: #f06292;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.cart-close:hover {
+  color: #c2185b;
+}
+
+.cart button:hover {
+  background-color: #ec407a;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #b08ed1;
+  border: 5px double #666666;
+}
+
+.footer_title {
+  color: #441c58;
+  background-color: none;
+  text-align: center;
+  letter-spacing: 5px;
+  text-decoration: underline;
+  word-spacing: 15px;
+  text-shadow: 2px 2px 5px #000;
+  font-size: 25px;
+}
+
+.footer_text {
+  text-align: justify;
+  font-size: 1rem;
+}
+
+.historia {
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border: 5px double #666666;
+  -webkit-box-shadow: 0px 0px 20px #000;
+          box-shadow: 0px 0px 20px #000;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #b78c8c;
+}
+
+.historia_1, .historia_3 {
+  background-color: #e77cdb;
+  border: 2px solid #666666;
+}
+
+.historia_2 {
+  background-color: #eb44d7;
+  border: 2px solid #666666;
+}
+
+.section_text {
+  text-align: justify;
+  font-size: 15px;
+}
+
+h1, h2, h3 {
+  color: #2c0d3b;
+  background-color: #f5a8dc;
+  text-align: center;
+  letter-spacing: 5px;
+  text-decoration: underline;
+  word-spacing: 15px;
+  text-shadow: 2px 2px 5px #000;
+  font-size: 25px;
+}
+/*# sourceMappingURL=main.css.map */

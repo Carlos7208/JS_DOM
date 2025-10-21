@@ -1,0 +1,237 @@
+body {
+    font-family:$fontFamily;
+    font-weight: 600;
+}
+
+
+
+header {
+    width:100%;
+    padding: 20px;
+    box-sizing:border-box;
+    background-color: $mailColor;
+    @include flexbox;
+    align-items: center;
+    border: 5px double #666666;
+
+    
+        img{
+            width: 300px;
+        }
+
+        nav{
+            @include flexbox;
+            flex-direction: row;
+            gap: 20px;
+
+            @include tablets{
+                flex-direction: column;
+            }
+
+            a {
+               @extend %link;
+            }
+
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+
+        > a {
+            display:block;
+            color:#fff;
+        }
+    
+        .shop_user {
+           @include flexbox();
+            gap:10px;
+            
+            i{
+                cursor:pointer;
+                transition: all .2s ease;
+
+                &:hover {
+                    transform: scale(1.07);
+                }
+                &:first-child{
+                    width: 24px;
+                }
+
+                &:last-child{
+                    width: 23px;
+                }
+              
+                img {
+                    width: 60px;
+                }
+            }
+           
+        }
+
+    .cart-icon-container {
+        position: relative;
+        display: inline-block;
+    }
+    #cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #e91e63;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 50%;
+        min-width: 18px;
+        text-align: center;
+    }
+}
+
+/* ===== MAIN ===== */
+
+
+
+/* ===== IMAGENES ===== */
+
+.Personajes{
+    @include backgroundContainer(#9e5e97, 5px, double);
+}
+
+.banner {
+    width: 100%;
+    padding: 90px 0;
+    text-align: center;
+    background-image: url("../img/fondo_sailormoon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(41, 2, 49);
+    background-position-y: 40%;
+}
+
+h4 {
+     @include titulos(rgb(44, 13, 59), none, 10px );
+}
+
+.banner_text {
+  color: #130d0d;
+  font-size: 30px;
+}
+
+.gallery {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.gallery_item {
+  text-align: center;
+}
+
+.gallery_image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+button.add-to-cart {
+  margin-top: 10px;
+  background-color: #f06292;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.add-to-cart:hover {
+  background-color: #ec407a;
+}
+
+/* ======== CARRITO DESLIZANTE ======== */
+.cart {
+  position: fixed;
+  top: 0;
+  left: -350px; /* Oculto inicialmente */
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  border-right: 3px solid #f8bbd0;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  overflow-y: auto;
+  transition: left 0.3s ease; /* Animación */
+  z-index: 1000;
+}
+
+/* Cuando está activo → visible */
+.cart.active {
+  left: 0;
+}
+
+.cart h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.cart ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f48fb1;
+  padding: 6px 0;
+}
+
+.cart button {
+  display: block;
+  margin: 15px auto 0;
+  background-color: #f06292;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.cart-close:hover {
+  color: #c2185b;
+}
+
+.cart button:hover {
+  background-color: #ec407a;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    @include backgroundContainer(rgb(176, 142, 209), 5px, double);
+}
+
+.footer_title {
+     @include titulos(rgb(68, 28, 88), none, 25px );
+}
+
+.footer_text {
+    text-align: justify;
+    font-size: 1rem;
+}
+
